@@ -1,0 +1,7 @@
+{
+  "name": "UBBSchedule",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

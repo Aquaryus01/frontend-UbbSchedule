@@ -1,0 +1,71 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>Filter</ion-title>
+  
+      <ion-buttons slot="end" (click)="dismiss()">
+        <ion-icon name="close" item-start large></ion-icon>
+      </ion-buttons>
+  
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+    <ion-list>
+        <div *ngFor="let discipline of schedules; let i = index">
+        <ion-item lines="none">
+            <ion-label (click)="expand(i,discipline)">{{discipline.title}}</ion-label>
+
+            <ion-grid (click)="expand(i,discipline)" style="padding: 5px 20px 0px 20px">
+              <ion-row style="text-align: center">
+                <!-- <ion-icon name="archive" item-start medium></ion-icon> -->
+                {{discipline.type}}
+              </ion-row>
+            </ion-grid>
+
+            
+            <ion-button style="width: 73px;" *ngIf="discipline.isActive" expand="full" color="danger" (click)="changeStateInactive(discipline)">Remove</ion-button>
+            <ion-button style="width: 73px;" *ngIf="!discipline.isActive" expand="full" color="success" (click)="changeStateActive(discipline)">Add   </ion-button>
+          </ion-item>
+
+          <!-- <div *ngIf="2">
+              <ion-item>
+                  <ion-icon slot="start" name="book"></ion-icon>
+                  <ion-input [(ngModel)]="title"></ion-input>
+                </ion-item>
+                
+                <ion-item>
+                  <ion-icon slot="start" name="ios-archive"></ion-icon>
+                  <ion-input [(ngModel)]="type"></ion-input>
+                </ion-item>
+                
+                <ion-item>
+                  <ion-icon slot="start" name="clock"></ion-icon>
+                  <ion-input [(ngModel)]="time"></ion-input>
+                </ion-item>
+                
+                <ion-item>
+                  <ion-icon slot="start" name="calendar"></ion-icon>
+                  <ion-input [(ngModel)]="day"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                  <ion-icon slot="start" name="body"></ion-icon>
+                  <ion-input [(ngModel)]="author"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                  <ion-icon slot="start" name="map"></ion-icon>
+                  <ion-input [(ngModel)]="adress"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                  <ion-icon slot="start" name="locate"></ion-icon>
+                  <ion-input [(ngModel)]="room"></ion-input>
+                </ion-item>
+
+                <ion-button (click)="editSchedule()" style="margin: 0px" expand="block">Submit edit</ion-button> 
+              </div>-->
+            </div>
+
+    </ion-list>
+</ion-content>

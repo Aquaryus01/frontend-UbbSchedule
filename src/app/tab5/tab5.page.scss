@@ -1,0 +1,40 @@
+  .red-card {
+    border-top: 3px solid #e60000
+ }
+
+ .green-card {
+    border-top: 3px solid #9fff80
+ }
+
+ .yellow-card{
+    border-top: 3px solid #ffa64d
+ }
+
+ .red-title {
+   font-weight: bold; 
+   font-size: 18px; 
+   color: #800000;
+}
+
+.green-title {
+   font-weight: bold; 
+   font-size: 18px; 
+   color: #003311;
+}
+
+.yellow-title{
+   font-weight: bold; 
+   font-size: 18px; 
+   color: #b35900;
+}
+
+ion-grid{
+        ion-card{
+            width:100%;
+            margin-left:0 !important;
+            margin-right:0 !important;
+            ion-card-content{
+                padding: 0 !important; 
+            }
+        }
+    }

@@ -1,0 +1,53 @@
+<app-top-bar></app-top-bar>
+
+<ion-content class="cards-bg">
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button (click)="presentToast()" color="light" size="small">
+          <ion-icon color="dark" name="arrow-dropright"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+
+<div *ngFor="let schedule of schedules">
+<div *ngIf="schedule.isActive">
+<ion-card [ngClass]="{
+  'green-card': schedule.type === 'Curs',
+  'yellow-card':schedule.type === 'Seminar',
+  'red-card':schedule.type === 'Laborator'
+  }">
+    <ion-card-header>
+      <ion-row>
+        <ion-col style="padding-left: 0px;" size="11">
+            <ion-card-title 
+            style="font-weight: bold; font-size: 17px; color: black; margin-bottom: 5px">
+              {{schedule.title}}
+            
+            </ion-card-title>
+        </ion-col>
+      </ion-row>
+      <ion-card-subtitle>{{schedule.author}}</ion-card-subtitle>
+      <br>
+      <ion-icon name="map" item-start medium></ion-icon>{{schedule.adress}}
+    </ion-card-header>
+    
+    <ion-grid style="padding: 5px 20px 0px 20px">
+        <ion-row>
+          <ion-col style="text-align: left">
+            <ion-icon name="clock" item-start medium></ion-icon>
+            {{schedule.time}}
+          </ion-col>
+          <ion-col style="text-align: center">
+            <ion-icon name="archive" item-start medium></ion-icon>
+            {{schedule.type}}
+          </ion-col>
+          <ion-col style="text-align: right">
+              <ion-icon name="locate" item-start medium></ion-icon>
+              {{schedule.room}}
+            </ion-col>
+        </ion-row>
+      </ion-grid>
+</ion-card>
+</div>
+</div>  
+
+
+</ion-content>
